@@ -11,7 +11,7 @@ soup = BeautifulSoup(website_html, "html.parser")
 
 titles = soup.find_all(name ="h3", class_="title")
 
-titles_list = [title.get_text()+"\n" for title in titles]
+titles_list = [title.get_text()+"\n" for title in titles][::-1]
 with open("output.txt", "w", encoding="utf-8") as file:
     for entry in titles_list:
         file.write(entry)
